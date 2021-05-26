@@ -16,14 +16,6 @@ import { Provider } from "react-redux";
 
 const store = configureStore();
 
-store.dispatch(addExpense({ description: "Water bill", amount: 4500 }));
-store.dispatch(addExpense({ description: "Gas bill", createdAt: 1000 }));
-store.dispatch(addExpense({ description: "Rent", amount: 109500 }));
-
-const state = store.getState();
-const visibleExpense = getVisisbleExpenses(state.expenses, state.filters);
-console.log(visibleExpense);
-
 const jsx = (
   <Provider store={store}>
     <AppRouter />
